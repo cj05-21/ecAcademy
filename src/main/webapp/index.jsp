@@ -147,7 +147,7 @@
             <div class="col-md-6 mt-lg-5 text-center">
               <h1 class="text-shadow">당신의 오늘은 젊기에</h1>
               <p class="mb-5 text-shadow">Find better with EC Academy   </p>
-              <p><a href="./classes/list.do" target="_blank" class="btn btn-primary px-5 py-3">수강신청</a></p>
+              <p><a href="https://github.com/cj05-21/ecAcademy" target="_blank" class="btn btn-primary px-5 py-3">Code View</a></p>
              
             </div>
           </div>
@@ -164,7 +164,7 @@
             <div class="col-md-6 mt-lg-5 text-center">
               <h1 class="text-shadow">밝은 미래를 위해</h1>
               <p class="mb-5 text-shadow">We always with you  </p>
-              <p><a href="./classes/list.do" target="_blank" class="btn btn-primary px-5 py-3">수강신청</a></p>
+              <p><a href="https://github.com/cj05-21/ecAcademy" target="_blank" class="btn btn-primary px-5 py-3">Code View</a></p>
              
             </div>
           </div>
