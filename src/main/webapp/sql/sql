@@ -1,0 +1,329 @@
+select * from notice;
+--academy
+--회원 테이블 생성
+select * from mem_inform;
+drop table mem_inform;
+create table mem_inform(
+ m_level varchar(20) not null
+,m_id varchar(20) not null primary key
+,m_pw varchar(20) not null
+,m_name varchar(20) not null
+,m_job varchar(20) 
+,m_email varchar(20) not null
+,email_agree char(2) not null --Y/N
+,m_phone varchar(20) not null
+,phone_agree char(2) not null --Y/N
+,ref_acount varchar(30)
+,ref_name varchar(20)
+);
+
+insert into mem_inform(m_level,m_id,m_pw,m_name,m_job,m_email,email_agree,m_phone,phone_agree)
+values('C','english1','12345','이동연','대부업','english1@fmail.com','Y','01011111111','Y');
+
+insert into mem_inform(m_level,m_id,m_pw,m_name,m_job,m_email,email_agree,m_phone,phone_agree)
+values('F','english2','12345','구정용','파워블로거','english2@fmail.com','Y','01022222222','Y');
+
+insert into mem_inform(m_level,m_id,m_pw,m_name,m_job,m_email,email_agree,m_phone,phone_agree)
+values('C','english3','12345','김형민','축구심판','english3@fmail.com','N','01033333333','N');
+
+insert into mem_inform(m_level,m_id,m_pw,m_name,m_job,m_email,email_agree,m_phone,phone_agree)
+values('C','english4','12345','조서연','웹마스터','english4@fmail.com','N','01011112222','N');
+
+insert into mem_inform(m_level,m_id,m_pw,m_name,m_job,m_email,email_agree,m_phone,phone_agree)
+values('F','english5','12345','조형기','프로게이머','english5@fmail.com','Y','01011113333','N');
+
+insert into mem_inform(m_level,m_id,m_pw,m_name,m_job,m_email,email_agree,m_phone,phone_agree)
+values('C','english6','12345','최딸기','농부','english6@fmail.com','Y','01022223333','N');
+
+insert into mem_inform(m_level,m_id,m_pw,m_name,m_job,m_email,email_agree,m_phone,phone_agree)
+values('B','english7','12345','바비김','농부','english6@fmail.com','Y','01022223333','N');
+
+insert into mem_inform(m_level,m_id,m_pw,m_name,m_job,m_email,email_agree,m_phone,phone_agree)
+values('B','master','12345','바비김','농부','english6@fmail.com','Y','01022223333','N');
+
+--영어강좌 테이블 생성
+drop table class;
+select * from class;
+create table class(
+w_code      Number(30) not null primary key --강좌코드
+,c_code     varchar(30) not null              -- 과목코드
+,c_prod      varchar(80) not null                   --강좌명
+,c_det        varchar(255) not null                   --강좌상세설명
+,tc_name    varchar(10) not null                   --강사명
+,c_price      Number(38) not null                  --수강료
+,c_image    varchar(30) not null                  --대표이미지
+,c_max       number(10) not null                 --최대정원
+,c_test       varchar(30) not null                  --테스트문제
+,c_date       date  not null                        --강좌등록일
+,c_datend   date  not null                           --신청마감일
+,c_start      date  not null                           --수업시작일
+,c_end       date  not null                           --수업종료일
+);
+commit;
+insert into class(w_code, c_code, c_prod, c_det, tc_name, c_price, c_image, c_max, c_test, c_date, c_datend, c_start, c_end)
+values(1, 'toeic','광토익 600+목표 1개월완성반','이거슨 최고의 강의!!!!', '바비김','382500','cute.jpg',30 ,'test.jpg','20191024', '20191123','20191210','20200109');
+
+insert into class(w_code, c_code, c_prod, c_det, tc_name, c_price, c_image, c_max, c_test, c_date, c_datend, c_start, c_end)
+values(2, 'toeic','급상승토익 700+목표 2개월완성반','이거슨 최고의 강의!!!!', '애나','382500','cute.jpg',30 ,'test.jpg','20191024', '20191123','20191210','20200109');
+
+insert into class(w_code, c_code, c_prod, c_det, tc_name, c_price, c_image, c_max, c_test, c_date, c_datend, c_start, c_end)
+values(3, 'toeic','토익 기초필수 1개월완성반(문법+RC독해)','이거슨 최고의 강의!!!!', '강솔아','382500','cute.jpg',30 ,'test.jpg','20191024', '20191123','20191210','20200109');
+
+insert into class(w_code, c_code, c_prod, c_det, tc_name, c_price, c_image, c_max, c_test, c_date, c_datend, c_start, c_end)
+values(4, 'toefl','토플 80+ 1개월 완성 벼락치기반(4주이론+주말무료실전)','이거슨 최고의 강의!!!!', '바비안','382500','cute.jpg',30 ,'test.jpg','20191024', '20191123',        '20191210',        '20200109');
+
+insert into class(w_code, c_code, c_prod, c_det, tc_name, c_price, c_image, c_max, c_test, c_date, c_datend, c_start, c_end)
+values(5, 'toefl','토플 90+ 1개월 완성 벼락치기(3주이론+1주실전)','이거슨 최고의 강의!!!!', '김정윤','382500','cute.jpg',30 ,'test.jpg','20191024','20191123','20191210','20200109');
+
+insert into class(w_code, c_code, c_prod, c_det, tc_name, c_price, c_image, c_max, c_test, c_date, c_datend, c_start, c_end)
+values(6, 'toefl','토요반]TOEFL 80+ 종합반','이거슨 최고의 강의!!!!', '장은혜','382500','cute.jpg',30 ,'test.jpg','20191024', '20191123','20191210','20200109');
+
+insert into class(w_code, c_code, c_prod, c_det, tc_name, c_price, c_image, c_max, c_test, c_date, c_datend, c_start, c_end)
+values(7, 'teps','TEPS 320 1개월 완성반','이거슨 최고의 강의!!!!', '하승연','382500','cute.jpg',30 ,'test.jpg','20191024', '20191123','20191210','20200109');
+
+insert into class(w_code, c_code, c_prod, c_det, tc_name, c_price, c_image, c_max, c_test, c_date, c_datend, c_start, c_end)
+values(8, 'teps','TEPS 400 1개월 완성반','이거슨 최고의 강의!!!!', '권민지','382500','cute.jpg',30 ,'test.jpg','20191024', '20191123','20191210','20200109');
+
+insert into class(w_code, c_code, c_prod, c_det, tc_name, c_price, c_image, c_max, c_test, c_date, c_datend, c_start, c_end)
+values(9, 'teps','TEPS 500 1개월 완성반','이거슨 최고의 강의!!!!', '김인','382500','cute.jpg',30 ,'test.jpg','20191024','20191123','20191210','20200109');
+
+insert into class(w_code, c_code, c_prod, c_det, tc_name, c_price, c_image, c_max, c_test, c_date, c_datend, c_start, c_end)
+values(10, 'opic','OPIc IM2~AL 목표 4주완성+인강20강','이거슨 최고의 강의!!!!', '이현석','382500','cute.jpg',30 ,'test.jpg','20191024', '20191123','20191210','20200109');
+
+insert into class(w_code, c_code, c_prod, c_det, tc_name, c_price, c_image, c_max, c_test, c_date, c_datend, c_start, c_end)
+values(11, 'opic','OPIc IM2~AL 2주완성+인강20강 토일1차','이거슨 최고의 강의!!!!', '김소라','382500','cute.jpg',30 ,'test.jpg','20191024', '20191123','20191210','20200109');
+
+insert into class(w_code, c_code, c_prod, c_det, tc_name, c_price, c_image, c_max, c_test, c_date, c_datend, c_start, c_end)
+values(12, 'opic','OPIc IM2~AL 목표 4주완성반','이거슨 최고의 강의!!!!', 'Angie 이','382500','cute.jpg',30 ,'test.jpg','20191024', '20191123','20191210','20200109');
+-----------------------------------------------------------------
+----강사 테이블 생성(m_level) 추가
+select * from teacher;
+drop table teacher;
+create table teacher(
+tc_no number(10) not null primary key
+,m_level varchar(20) not null
+,m_id varchar(20) not null --references mem_inform(m_id)
+,tc_name varchar(30) not null
+,w_code Number(30) not null --references class (w_code)
+,c_code varchar(30) not null 
+,poster   VARCHAR2(255) DEFAULT 'poster.jpg' NOT NULL
+);
+commit;
+--강사테이블 시퀀스
+drop sequence teacher_seq;
+create sequence teacher_seq
+increment by 1
+start with 1
+maxvalue 999;
+
+----강사테이블 (m_id에 강사 id가 필요해서 'teacher'로 만들어줘야 실행되서 insert함)
+insert into mem_inform(m_level,m_id,m_pw,m_name,m_job,m_email,email_agree,m_phone,phone_agree)
+values('B','teacher3','12345','이포도','강사','teacher3@fmail.com','Y','01022223333','N',);
+
+insert into mem_inform(m_level,m_id,m_pw,m_name,m_job,m_email,email_agree,m_phone,phone_agree)
+values('B','teacher2','12345','김이나','강사','teacher2fmail.com','Y','01022223333','N',);
+
+insert into mem_inform(m_level,m_id,m_pw,m_name,m_job,m_email,email_agree,m_phone,phone_agree)
+values('B','teacher1','12345','바비김','강사','teacher1@fmail.com','Y','01022223333','N',);
+
+commit;
+insert into teacher(tc_no,m_id,tc_name,w_code ) values(teacher_seq.nextval,'english1','바비김','w_01');
+insert into teacher(tc_no,m_id,tc_name,w_code ) values(teacher_seq.nextval,'english2','애나','w_02');
+insert into teacher(tc_no,m_id,tc_name,w_code ) values(teacher_seq.nextval,'english3','강솔아','w_03');
+insert into teacher(tc_no,m_id,tc_name,w_code ) values(teacher_seq.nextval,'english4','바비안','w_04');
+insert into teacher(tc_no,m_id,tc_name,w_code ) values(teacher_seq.nextval,'english5','김정윤','w_05');
+insert into teacher(tc_no,m_id,tc_name,w_code ) values(teacher_seq.nextval,'english6','장은혜','w_06');
+insert into teacher(tc_no,m_id,tc_name,w_code ) values(teacher_seq.nextval,'english7','하승연','w_07');
+
+select * from notice;
+-------------------------------------------------------------------
+--위시리스트
+drop table wishList;
+CREATE TABLE wishList (
+wlist number(10) not null PRIMARY KEY 
+,w_code VARCHAR(30) not null --REFERENCES class (w_code) ,
+,m_id VARCHAR(20) not null --REFERENCES mem_inform (m_id)
+);
+
+drop sequence wishList_seq;
+create sequence wishList_seq
+increment by 1
+start with 1
+maxvalue 999;
+
+INSERT INTO wishList(wlist, w_code, m_id) VALUES(wishList_seq.nextval, 'w_01', 'english1');
+INSERT INTO wishList(wlist, w_code, m_id) VALUES(wishList_seq.nextval, 'w_02', 'english1');
+INSERT INTO wishList(wlist, w_code, m_id) VALUES(wishList_seq.nextval, 'w_04', 'english1');
+INSERT INTO wishList(wlist, w_code, m_id) VALUES(wishList_seq.nextval, 'w_02', 'english2');
+INSERT INTO wishList(wlist, w_code, m_id) VALUES(wishList_seq.nextval, 'w_04', 'english3');
+
+--결재내역 테이블 생성
+drop table pay;
+CREATE TABLE pay (
+ap_no NUMBER(5) NOT NULL PRIMARY KEY
+,m_id VARCHAR(20) NOT NULL --REFERENCES mem_inform(m_id),
+,w_code VARCHAR(30) NOT NULL --REFERENCES class(w_code),
+,w_sts VARCHAR(6) NOT NULL
+);
+
+drop sequence pay_no_seq;
+
+create sequence pay_no_seq
+increment by 1
+start with 1
+maxvalue 999;
+
+INSERT INTO pay(ap_no, m_id, w_code, w_sts) VALUES(pay_no_seq.nextval, 'english1', 'w_01', '수료');
+INSERT INTO pay(ap_no, m_id, w_code, w_sts) VALUES(pay_no_seq.nextval, 'english2', 'w_02', '제적');
+INSERT INTO pay(ap_no, m_id, w_code, w_sts) VALUES(pay_no_seq.nextval, 'english3', 'w_01', '환불');
+INSERT INTO pay(ap_no, m_id, w_code, w_sts) VALUES(pay_no_seq.nextval, 'english3', 'w_03', '진행');
+INSERT INTO pay(ap_no, m_id, w_code, w_sts) VALUES(pay_no_seq.nextval, 'english4', 'w_05', '진행');
+INSERT INTO pay(ap_no, m_id, w_code, w_sts) VALUES(pay_no_seq.nextval, 'english5', 'w_04', '제적');
+
+--후기 테이블 생성
+drop table review;
+create table review(
+r_no         number(5)   not null primary key
+,r_subject   varchar(100) not null
+,r_content  varchar(255) not null
+,m_id        varchar(20) not null --references mem_inform (m_id)
+,r_date      date        not null
+,r_readcnt   number(15)  default 0
+,score       number(5)   not null
+,c_code     varchar(30) not null        
+);
+drop sequence review_seq;
+create sequence review_seq
+increment by 1
+start with 1
+maxvalue 999;
+
+insert into review (r_no, r_subject, r_content, m_id,r_date,r_readcnt,score,c_code) values (review_seq.nextval, '이번 시험은 soso...', '이번 시험은 soso...','english1', '20190324', 132,4,'toeic');
+insert into review (r_no, r_subject, r_content,m_id,r_date,r_readcnt,score,c_code) values (review_seq.nextval, '강추합니다.', '강추합니다.','english2', '20190211', 170,3,'opic');
+insert into review (r_no, r_subject, r_content, m_id,r_date,r_readcnt,score,c_code) values (review_seq.nextval, '꼭 900점 찍고 올게요', '꼭 900점 찍고 올게요','english3', '20190124', 87,4,'opic');
+insert into review (r_no, r_subject, r_content,m_id,r_date,r_readcnt,score,c_code) values (review_seq.nextval, '초급자가 배우기엔 어려웠음', '초급자가 배우기엔 어려웠음','english4', '20190117', 51,2,'toefl');
+insert into review (r_no, r_subject, r_content,m_id,r_date,r_readcnt,score,c_code) values (review_seq.nextval, '이제 토익 빠빠이다', '이제 토익 빠빠이다','english5', '20181221', 215,5,'toeic');
+insert into review (r_no, r_subject, r_content,m_id,r_date,r_readcnt,score,c_code) values (review_seq.nextval, '다음 강의는 더 열심히 들을게요ㅠㅠ', '다음 강의는 더 열심히 들을게요ㅠㅠ','english6', '20181211', 207,5,'teps');
+commit;
+--공지사항 테이블 생성(마지막 칼럼 inform 이 추가)
+select * from notice;
+drop table notice;
+create table notice (
+n_no        number(5)   not null primary key
+,n_subject  varchar(100) not null
+,n_content varchar(255) not null
+,m_id       varchar(20) not null references mem_inform (m_id)
+,n_date     date        not null
+,n_readcnt  number(10)   default 0
+,inform  varchar(10)   not null
+);
+commit;
+drop sequence notice_seq;
+create sequence notice_seq
+increment by 1
+start with 1
+maxvalue 999;
+
+insert into notice (n_no, n_subject, n_content, m_id, n_date, n_readcnt,inform ) values (notice_seq.nextval,'새로운 강좌 안내드립니다.', '새로운 강좌 안내드립니다.','master', '20190324', 132,'안내');
+insert into notice (n_no, n_subject, n_content,m_id, n_date, n_readcnt,inform ) values (notice_seq.nextval,'새해에도 토익하세요', '새해에도 토익하세요','master', '20190101', 79,'점검');
+insert into notice (n_no, n_subject, n_content,m_id, n_date, n_readcnt,inform ) values (notice_seq.nextval,'크리스마스 토플특강에 여러분을 초대합니다.', '크리스마스 토플특강에 여러분을 초대합니다.','master', '20181215', 118,'안내');
+insert into notice (n_no, n_subject, n_content,m_id, n_date, n_readcnt,inform ) values (notice_seq.nextval,'이번 달 새로운 강좌 안내 드립니다.', '이번 달 새로운 강좌 안내 드립니다.','master', '20181105', 57,'점검');
+insert into notice (n_no, n_subject, n_content,m_id, n_date, n_readcnt,inform ) values (notice_seq.nextval,'반갑습니다.', '반갑습니다.','master', '20180821', 13,'안내');
+commit;
+--qna
+drop table qna;
+create table qna (
+q_code      number(5)   not null
+,q_no       number(5)   not null primary key
+,q_subject  varchar(50) not null
+,q_content VARCHAR(255) NOT NULL
+,q_id       varchar(20) not null references mem_inform (m_id)
+,q_date     date        not null
+,q_group    char(5)     DEFAULT 0
+,q_indent NUMBER(5) DEFAULT 0
+);
+
+insert into qna (q_code, q_no, q_subject, q_content, q_id, q_date, q_group, q_indent) values (1,(SELECT NVL(MAX(q_no), 0)+1 FROM qna), '답변 부탁드려요','질문내용' ,'english1','20190324', 1, 0);
+insert into qna (q_code, q_no, q_subject, q_content, q_id, q_date, q_group, q_indent) values (2,(SELECT NVL(MAX(q_no), 0)+1 FROM qna), '답변 드립니다','답변내용' ,'master','20190324', 1, 1);
+insert into qna (q_code, q_no, q_subject, q_content, q_id, q_date, q_group, q_indent) values (1,(SELECT NVL(MAX(q_no), 0)+1 FROM qna), '강의 관련 질문','질문내용' ,'english2','20190217', 2, 0);
+insert into qna (q_code, q_no, q_subject, q_content, q_id, q_date, q_group, q_indent) values (2,(SELECT NVL(MAX(q_no), 0)+1 FROM qna), '강의 질문 답변 드립니다','질문내용' ,'master','20190217', 2, 1);
+insert into qna (q_code, q_no, q_subject, q_content, q_id, q_date, q_group, q_indent) values (1,(SELECT NVL(MAX(q_no), 0)+1 FROM qna), '결제 방법...','질문내용' ,'english3','20190203', 3, 0);
+insert into qna (q_code, q_no, q_subject, q_content, q_id, q_date, q_group, q_indent) values (2,(SELECT NVL(MAX(q_no), 0)+1 FROM qna), '결제 방법 답변드립니다.','답변내용' ,'master','20190203', 3, 1);
+--수강목록 테이블 생성
+drop table lecture;
+create table lecture (
+le_no    number(5)      not null    primary key
+,m_id    varchar(10)    not null    --references mem_inform (m_id)
+,w_code  varchar(30)    not null    --references class (w_code)
+,le_sts  varchar(10)    not null
+);
+drop sequence lecture_seq;
+create sequence lecture_seq
+increment by 1
+start with 1
+maxvalue 999;
+
+insert into lecture (le_no, m_id, w_code, le_sts) values (lecture_seq.nextval, 'english1', 'w_01', 'p');
+insert into lecture (le_no, m_id, w_code, le_sts) values (lecture_seq.nextval, 'english1', 'w_02', 'f');
+insert into lecture (le_no, m_id, w_code, le_sts) values (lecture_seq.nextval, 'english3', 'w_03', 'f');
+insert into lecture (le_no, m_id, w_code, le_sts) values (lecture_seq.nextval, 'english2', 'w_04', 'p');
+insert into lecture (le_no, m_id, w_code, le_sts) values (lecture_seq.nextval, 'english5', 'w_05', 'f');
+insert into lecture (le_no, m_id, w_code, le_sts) values (lecture_seq.nextval, 'english5', 'w_06', 'p');
+
+--출석부 테이블 생성
+drop table attend;
+create table attend (
+att_no          number(5)      not null primary key
+,m_id           varchar(20)    not null --references mem_inform (m_id)
+,w_code         varchar(30)    not null --references class (w_code)
+,attend_date    date           not null
+);
+
+drop sequence attend_seq;
+create sequence attend_seq
+increment by 1
+start with 1
+maxvalue 999;
+
+insert into attend (att_no, m_id, w_code, attend_date) values (attend_seq.nextval, 'english1', 'w_01', '20191022');
+insert into attend (att_no, m_id, w_code, attend_date) values (attend_seq.nextval, 'english2', 'w_01', '20191023');
+insert into attend (att_no, m_id, w_code, attend_date) values (attend_seq.nextval, 'english3', 'w_01', '20191023');
+insert into attend (att_no, m_id, w_code, attend_date) values (attend_seq.nextval, 'english4', 'w_02', '20191020');
+insert into attend (att_no, m_id, w_code, attend_date) values (attend_seq.nextval, 'english5', 'w_02', '20191020');
+insert into attend (att_no, m_id, w_code, attend_date) values (attend_seq.nextval, 'english6', 'w_05', '20191019');
+
+--강의 정답지 테이블 생성
+drop table test;
+create table test( 
+w_code VARCHAR(10) NOT NULL
+,ex_an VARCHAR(10) NOT NULL
+,primary key (ex_an)
+);
+
+insert into test(w_code,ex_an) values('w_01','test1');
+insert into test(w_code,ex_an) values('w_02','test2');
+insert into test(w_code,ex_an) values('w_03','test3');
+insert into test(w_code,ex_an) values('w_04','test4');
+
+--답안 테이블 생성
+drop table an;
+create table an(
+an_no NUMBER(5) NOT NULL primary key
+,question NUMBER(5) 
+,answer	  NUMBER(5)
+,point    NUMBER(5) NOT NULL
+,ex_an	  VARCHAR(10) NOT NULL references test(ex_an)
+);
+
+create sequence an_seq
+increment by 1
+start with 1
+maxvalue 999;
+
+insert into an(an_no,question,answer,point,ex_an) values(an_seq.nextval,1,5,4,'test1');
+insert into an(an_no,question,answer,point,ex_an) values(an_seq.nextval,2,3,3,'test1');
+insert into an(an_no,question,answer,point,ex_an) values(an_seq.nextval,3,3,3,'test1');
+
+commit;
+
+
