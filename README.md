@@ -4,5 +4,5 @@
 
 
 ## 20200122
-Apache log4j 버전 1.2.15 >>  Apache log4j 2 버전 2.8.2 
-업그레이드 
+Apache log4j 버전 1.2.15 >>  Apache log4j 2 버전 2.8.2  업그레이드 
+<br>->https://geminihoroscope.tistory.com/107
