@@ -187,7 +187,7 @@
       	<div class="col-md-6 col-lg-4 mb-5 mb-lg-5 ">
             <div class="ftco-media-1">
                <div class="ftco-media-1-inner">
-                 <a href="property-single.html" class="d-inline-block mb-4"><img src="teacher/storage/${dto.poster}" alt="Free website template by Free-Template.co" class="img-fluid"></a>
+                 <img src="teacher/storage/${dto.poster}" alt="Free website template by Free-Template.co" class="img-fluid">
                   <div class="ftco-media-details">
                      <h3>${dto.c_prod }</h3>
                      <p>${dto.tc_name }</p>
@@ -253,10 +253,10 @@
               
               <c:choose>
 			<c:when test="${dto.poster eq null}">
-    		<a href="single.html"><img src="./images/poster.jpg" alt="Free website template by Free-Template.co" class="img-fluid"></a>
+    		<img src="./images/poster.jpg" alt="Free website template by Free-Template.co" class="img-fluid">
 			</c:when>
 			<c:otherwise>
-			<a href="single.html"><img src="./review/storage/${dto.poster }" alt="Free website template by Free-Template.co" class="img-fluid"></a>
+			<img src="./review/storage/${dto.poster }" alt="Free website template by Free-Template.co" class="img-fluid">
 	        </c:otherwise>
 			</c:choose>
               <h2 class="font-size-regular" style="text-align:center;"><a href="single.html" class="text-dark">${dto.r_subject}</a></h2>
